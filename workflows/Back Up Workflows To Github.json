@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "n8n": {
       "main": [
@@ -176,7 +176,7 @@
     }
   },
   "createdAt": "2022-12-09T02:38:34.737Z",
-  "hash": "46f547ca56d2248a7aac8cefb912e3c8",
+  "hash": "2054b0c3cc56f1324743fcbb175942a1",
   "id": 3,
   "name": "Back Up Workflows To Github",
   "nodes": [
@@ -212,8 +212,8 @@
       "alwaysOutputData": true,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "6",
+          "name": "GitHub account 2"
         }
       },
       "continueOnFail": true
@@ -300,8 +300,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "6",
+          "name": "GitHub account 2"
         }
       }
     },
@@ -324,8 +324,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "6",
+          "name": "GitHub account 2"
         }
       }
     },
@@ -349,11 +349,11 @@
           "string": [
             {
               "name": "repo.owner",
-              "value": "n8n-io"
+              "value": "jospaquim"
             },
             {
               "name": "repo.name",
-              "value": "n8n-backups"
+              "value": "workflows"
             },
             {
               "name": "repo.path",
@@ -451,8 +451,8 @@
       "typeVersion": 1,
       "credentials": {
         "n8nApi": {
-          "id": "162",
-          "name": "Docker"
+          "id": "4",
+          "name": "n8n account"
         }
       }
     },
@@ -485,5 +485,5 @@
   "settings": {},
   "staticData": null,
   "tags": [],
-  "updatedAt": "2022-12-09T02:38:34.737Z"
+  "updatedAt": "2022-12-09T03:08:23.000Z"
 }
