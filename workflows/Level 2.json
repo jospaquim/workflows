@@ -1,0 +1,105 @@
+{
+  "active": false,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTML Extract",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2022-12-09T06:08:44.669Z",
+  "hash": "d831eb39efa856ffa3c4834cae0b32fa",
+  "id": 5,
+  "name": "Level 2",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "/*  return [\n\t{\n      json:{\n        name: 'jose',\n        color: 'blue',\n      }\n    }\n];\n*/\n\nvar myContacts=[\n  {\n  json:{\n    name:'alice',\n    email:{\n      personal: 'daljd@gmail.com',\n      work: 'jose@jadc.com'\n    },\n  }\n  },\n  {json:{\n    name:'marie',\n    email:{\n      personal: 'jsjs@hd.com',\n      work: 'jjsj@ddk.com'\n    },\n  }\n},\n];\nreturn myContacts;\n\n"
+      },
+      "id": "2a115680-9e2a-4cc9-8f20-3cc25bdfd513",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "let items = $input.all();\nitems[0].json.workEmail = items[0].json.email['work'];\nitems[1].json.workEmail = items[1].json.email['work'];\n\nreturn items;\n/*\n//Para crear varios elementos a partir de un solo elemento\nreturn $input.all().map(item => {\n\treturn {\n\t\tjson: item\n\t}\n});\n\n//Para crear un solo elemento a partir de varios elementos\n  return [\n    {\n      json: {\n        data_object: $input.all().map(item => item.json)\n      }\n    }\n  ];\n"
+      },
+      "id": "01651ec2-4e73-4a31-bb8f-e68546122173",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        100,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.daysoftheyear.com/days/mar/2022/",
+        "options": {}
+      },
+      "id": "2a4c6057-7898-43d9-91b6-866144b7e3ef",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -80,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "extractionValues": {
+          "values": [
+            {
+              "key": "event",
+              "cssSelector": "h3.card__title.heading ",
+              "returnValue": "html"
+            },
+            {
+              "key": "date",
+              "cssSelector": "div.date_day time",
+              "returnValue": "html"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3c23f2b8-0328-41dc-a8ec-b93beeca2d99",
+      "name": "HTML Extract",
+      "type": "n8n-nodes-base.htmlExtract",
+      "typeVersion": 1,
+      "position": [
+        140,
+        560
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "updatedAt": "2022-12-09T06:08:44.669Z"
+}
