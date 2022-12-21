@@ -27,14 +27,14 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "OpenAI",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request": {
+    "OpenAI": {
       "main": [
         [
           {
@@ -47,7 +47,7 @@
     }
   },
   "createdAt": "2022-12-08T22:40:34.397Z",
-  "hash": "39a6a20f2fb44c6ac60419ace0442685",
+  "dataLoaded": true,
   "id": 1,
   "name": "OpenAI-powered tweet generator",
   "nodes": [
@@ -64,7 +64,7 @@
     },
     {
       "parameters": {
-        "functionCode": "// hashtag list\nconst Hashtags = [\n  \"#techtwitter\",\n  \"#n8n\"\n];\n\n// random output function\nconst randomHashtag = Hashtags[Math.floor(Math.random() * Hashtags.length)];\nitem.hashtag = randomHashtag;\nreturn item;"
+        "functionCode": "// hashtag list\nconst Hashtags = [\n  \"#techtwitter\",\n  \"#n8n\",\n  \"#appmaker\",\n  \"#appbuilders\"\n];\n\n// random output function\nconst randomHashtag = Hashtags[Math.floor(Math.random() * Hashtags.length)];\nitem.hashtag = randomHashtag;\nreturn item;"
       },
       "name": "FunctionItem",
       "type": "n8n-nodes-base.functionItem",
@@ -87,7 +87,7 @@
       "name": "HTTP Request",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        860,
+        760,
         460
       ],
       "typeVersion": 1,
@@ -102,8 +102,16 @@
     {
       "parameters": {
         "operation": "append",
-        "application": "appOaG8kEA8FAABOr",
-        "table": "main",
+        "application": {
+          "__rl": true,
+          "value": "appIWzDkMmj0TsXy5",
+          "mode": ""
+        },
+        "table": {
+          "__rl": true,
+          "value": "table 1",
+          "mode": ""
+        },
         "options": {}
       },
       "name": "Airtable",
@@ -132,7 +140,7 @@
             },
             {
               "name": "Content",
-              "value": "={{$node[\"HTTP Request\"].json[\"choices\"][0][\"text\"]}}"
+              "value": "={{ $json[\"text\"] }}"
             }
           ]
         },
@@ -160,11 +168,34 @@
         660,
         320
       ]
+    },
+    {
+      "parameters": {
+        "prompt": "=Generate a tweet including the hashtag {{ $json[\"hashtag\"] }}",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "id": "f05d864d-2758-4ca9-ba0b-95326b7c7084",
+      "name": "OpenAI",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        640
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "7",
+          "name": "OpenAi account"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {},
   "staticData": null,
   "tags": [],
-  "updatedAt": "2022-12-08T22:41:08.000Z"
+  "updatedAt": "2022-12-21T04:53:42.000Z",
+  "versionId": "d78cc915-d24b-439b-b4f9-4c9d956c2c47"
 }
