@@ -25,7 +25,7 @@
     }
   },
   "createdAt": "2022-12-09T06:08:44.655Z",
-  "hash": "cf065add7fc33f91e72bb1b7a7c63f7e",
+  "dataLoaded": false,
   "id": 4,
   "name": "My workflow",
   "nodes": [
@@ -101,5 +101,6 @@
   "settings": {},
   "staticData": null,
   "tags": [],
-  "updatedAt": "2022-12-09T06:08:44.655Z"
+  "updatedAt": "2022-12-09T06:08:44.655Z",
+  "versionId": "60f31b06-bd36-416b-8c1f-4de18fd5aaaa"
 }
