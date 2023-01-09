@@ -1,0 +1,60 @@
+{
+  "active": false,
+  "connections": {
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "Twitter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-01-09T02:45:50.814Z",
+  "dataLoaded": false,
+  "id": 8,
+  "name": "Send a tweet to Twitter",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        720,
+        520
+      ],
+      "typeVersion": 1,
+      "id": "ea0eb7c6-917e-4680-8ade-162b0b265a91"
+    },
+    {
+      "parameters": {
+        "text": "This is a test workflow for the twitter node",
+        "additionalFields": {}
+      },
+      "name": "Twitter",
+      "type": "n8n-nodes-base.twitter",
+      "position": [
+        920,
+        520
+      ],
+      "typeVersion": 1,
+      "id": "b0a647d2-2d73-472b-ba5f-c5140df544ae",
+      "credentials": {
+        "twitterOAuth1Api": {
+          "id": null,
+          "name": "twitter-credentials"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-01-09T02:45:50.814Z",
+  "versionId": "6bfebd1e-c22f-4467-8fe3-b0827cf21189"
+}
