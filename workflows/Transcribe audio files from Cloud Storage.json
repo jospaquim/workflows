@@ -80,8 +80,7 @@
     }
   },
   "createdAt": "2022-12-21T04:58:26.222Z",
-  "dataLoaded": false,
-  "id": 6,
+  "id": "6",
   "name": "Transcribe audio files from Cloud Storage",
   "nodes": [
     {
