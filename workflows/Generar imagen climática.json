@@ -118,8 +118,7 @@
     }
   },
   "createdAt": "2023-01-08T21:49:26.252Z",
-  "dataLoaded": false,
-  "id": 7,
+  "id": "7",
   "name": "Generar imagen climática",
   "nodes": [
     {
