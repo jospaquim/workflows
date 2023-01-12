@@ -212,7 +212,7 @@
       "credentials": {
         "githubApi": {
           "id": "6",
-          "name": "GitHub account 2"
+          "name": "GitHub API account"
         }
       },
       "continueOnFail": true
@@ -300,7 +300,7 @@
       "credentials": {
         "githubApi": {
           "id": "6",
-          "name": "GitHub account 2"
+          "name": "GitHub API account"
         }
       }
     },
@@ -311,7 +311,7 @@
         "repository": "={{$node[\"Globals\"].json[\"repo\"][\"name\"]}}",
         "filePath": "={{$node[\"Globals\"].json[\"repo\"][\"path\"]}}{{$node[\"OneAtATime\"].json[\"name\"]}}.json",
         "fileContent": "={{$node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
-        "commitMessage": "=[N8N Backup] {{$node[\"OneAtATime\"].json[\"name\"]}}.json ({{$json[\"github_status\"]}})"
+        "commitMessage": "={{$node[\"OneAtATime\"].json[\"name\"]}}.json ({{$json[\"github_status\"]}})"
       },
       "id": "c453f119-c9cd-4bff-a618-c3e6d76a1531",
       "name": "GitHub Create",
@@ -324,7 +324,7 @@
       "credentials": {
         "githubApi": {
           "id": "6",
-          "name": "GitHub account 2"
+          "name": "GitHub API account"
         }
       }
     },
@@ -485,6 +485,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2023-01-11T02:54:10.000Z",
-  "versionId": "84256715-74c7-4b11-bb87-a933b2166050"
+  "updatedAt": "2023-01-12T21:59:05.000Z",
+  "versionId": "baf7e1da-204b-4aef-b851-a2a09dc5f439"
 }
