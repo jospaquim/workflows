@@ -1,0 +1,100 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2023-03-03T05:31:33.444Z",
+  "id": "2",
+  "name": "Chatgpt api",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "chat",
+        "model": "gpt-3.5-turbo-0301",
+        "prompt": {
+          "messages": [
+            {
+              "content": "ayuudame a explicar a un niño que es la teoria de cuerdas"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b90133f4-50b3-4ab4-9184-0c9d86c8896d",
+      "name": "OpenAI",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [
+        160,
+        240
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "3",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "2a068147-6498-4967-a445-6f8eed4b1051",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "108527205513834",
+        "recipientPhoneNumber": "51918094929",
+        "textBody": "={{ $json.message.content }}",
+        "additionalFields": {}
+      },
+      "id": "ab7c6c9b-1513-4d02-adab-5a489cb07db3",
+      "name": "WhatsApp Business Cloud",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        600,
+        340
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "4",
+          "name": "WhatsApp account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-03-03T05:31:33.444Z",
+  "versionId": "a8c46ed1-043a-4a5b-a127-17ae0864bc60"
+}
