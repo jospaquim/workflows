@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "n8n": {
       "main": [
@@ -450,7 +450,7 @@
       "typeVersion": 1,
       "credentials": {
         "n8nApi": {
-          "id": "4",
+          "id": "2",
           "name": "n8n account"
         }
       }
@@ -484,7 +484,7 @@
   "settings": {},
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2023-03-02T18:42:21.022Z",
-  "versionId": "b6eb3751-9472-43fa-a702-764a67551e94"
+  "triggerCount": 1,
+  "updatedAt": "2023-03-02T19:08:42.000Z",
+  "versionId": "6cb067c6-4a27-49fa-8988-f81e0a55c431"
 }
